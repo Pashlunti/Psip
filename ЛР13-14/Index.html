@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выполнение заданий</title>
+    <style>
+        .error {
+            border: 2px solid red;
+        }
+        .error-message {
+            color: red;
+            font-size: small;
+        }
+        #styledImage {
+            position: relative;
+        }
+        .new-style {
+            width: 75px; /* Уменьшение размера изображения */
+            height: auto;
+            border: 2px solid blue; /* Рамка синего цвета */
+            position: fixed;
+            left: 0;
+            bottom: 0; /* Перемещение в левый нижний угол */
+        }
+    </style>
+</head>
+<body>
+    <p>Жуковский Павел Андреевич</p>
+    <img id="styledImage" src="photo_2022-11-11_15-51-00.jpg" width="150" alt="Пример изображения">
+    <form id="userForm">
+        <label for="name">Фамилия Имя Отчество:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email адрес:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="question">Вопрос:</label>
+        <textarea id="question" name="question"></textarea><br><br>
+        <button type="submit">Валидация формы</button>
+    </form>
+    <button onclick="changeStyle()">Сменить стиль</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Получаем все изображения на странице
+            const images = document.querySelectorAll("img");
+            let imageInfo = "";
+            images.forEach((img, index) => {
+                imageInfo += `Изображение ${index + 1}: ${img.src}\n`;
+            });
+
+            // Выводим информацию через 5 секунд после загрузки страницы
+            setTimeout(() => {
+                alert(imageInfo);
+            }, 5000);
+
+            // Создаем новый элемент и вставляем его после формы
+            const link = document.createElement("a");
+            link.href = "https://www.wildberries.by";
+            link.textContent = "Ссылка на мой любимый сайт";
+            document.body.insertBefore(link, document.body.children[4].nextSibling);
+        });
+
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            validateForm();
+        });
+
+        function validateForm() {
+            let valid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const question = document.getElementById('question');
+
+            // Очистка предыдущих ошибок
+            document.querySelectorAll('.error-message').forEach(el => el.remove());
+            name.classList.remove('error');
+            email.classList.remove('error');
+            question.classList.remove('error');
+
+            // Проверка заполнения полей
+            if (name.value.trim() === '') {
+                valid = false;
+                showError(name, 'Поле "Фамилия Имя Отчество" должно быть заполнено.');
+            }
+            if (email.value.trim() === '') {
+                valid = false;
+                showError(email, 'Поле "Email адрес" должно быть заполнено.');
+            } else if (!validateEmail(email.value)) {
+                valid = false;
+                showError(email, 'Некорректный формат email.');
+            }
+            if (question.value.trim() === '') {
+                valid = false;
+                showError(question, 'Поле "Вопрос" должно быть заполнено.');
+            }
+
+            if (valid) {
+                alert('Форма успешно отправлена!');
+                // Здесь можно добавить код для отправки формы
+            }
+        }
+
+        function showError(element, message) {
+            element.classList.add('error');
+            const error = document.createElement('div');
+            error.className = 'error-message';
+            error.textContent = message;
+            element.parentNode.insertBefore(error, element.nextSibling);
+        }
+
+        function validateEmail(email) {
+            const re = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function changeStyle() {
+            document.getElementById('styledImage').classList.toggle('new-style');
+        }
+    </script>
+</body>
+</html>

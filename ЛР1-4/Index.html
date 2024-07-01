@@ -1,0 +1,217 @@
+<html>
+<head>
+  <title>Моя сайт-визитка</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #d6c1c1;
+    }
+    
+    img {
+      border-radius: 10%;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+    }
+    
+    .skills {
+      margin-top: 20px;
+    }
+    
+    .skills ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .skills li {
+      display: inline-block;
+      margin-right: 10px;
+      background-color: #333;
+      padding: 5px 10px;
+      color: #d6c1c1;
+      border-radius: 5px;
+    }
+    
+    .projects {
+      margin-top: 20px;
+    }
+    
+    .projects h3 {
+      color: #333;
+    }
+    
+    .projects ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .projects li {
+      margin-bottom: 10px;
+    }
+    
+    .login-form {
+      max-width: 300px;
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: #d6c1c1;
+    }
+    
+    .login-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .login-form input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .login-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .login-form button:hover {
+      background-color: #333;
+    }
+
+    table {
+      background-color: #333;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      color: #d6c1c1; 
+
+    }
+
+    table, th, td {
+      border: 1px solid #d6c1c1;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      color: #d6c1c1;
+    }
+
+    .white-bg {
+      background-color:#333;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>  
+<body>
+  <h1>Жуковский Павел</h1>
+  <img src="фото.jpg" alt="Моя фотография" style="width: 200px; height: auto;">
+  
+  <b>Желаемая должность:</b> Программист, Веб-дизайнер.
+  <br><b>Желаемый уровень дохода:</b> от 1238 рублей.</br>
+  <br></br>
+  <b>Дата рождения:</b> 27.09.2005 г.
+  <br></br>
+  <b>Проживание:</b> Беларусь, город Гродно, улица Одельская 45.
+  <br>Готов к командировкам и перезду.</br>
+  
+  <div class="contact-info">
+    <h3>Контактная информация:</h3>
+    <br>Email: pavelzukovskij13@gmail.com</br>
+    <br>Телефон: +375 (29) 217-32-10</br>
+  </div>
+  
+  <div class="skills">
+    <h3>Ключевые знания и навыки</h3>
+    <br><b>Языки программирования которые знаю:</b></br>
+    <ul>
+      <li>HTML</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>PascalABC</li>
+      <li>C#</li>
+      <li>Delphi</li>
+    </ul>
+    <br><b>Умею пользоваться такими программами как:</b></br>
+  </div>
+
+  <table>
+    <tr>
+      <td rowspan="2">Adobe Photoshop</td>
+      <td class="white-bg">Microsoft Office</td>
+      <td>Adobe Illustrator</td>
+    </tr>
+    <tr>
+      <td class="white-bg">VS Code</td>
+      <td class="white-bg">Blender</td>
+    </tr>
+    <tr>
+        <td colspan="3">Figma</td>
+      </tr>
+  </table>
+
+  <div class="works">
+    <h3>Опыт работы:</h3>
+    <b>20.09.2022 - 12.12.2022</b> Учебная практика, оператор ЭВМ.
+    <br>Получил 5 разряд</br>
+    <hr>
+   <ul>
+     <li>Научился быстро печатать</li>
+     <li>Научился пользоваться профессионально Microsoft Office</li>
+     <li>Научился работать в программе Adobe Illustrator</li>
+   </ul>
+   <hr>
+   <br></br>
+   <b>26.09.2023 - 10.12.2023</b> Учебная практика на производстве.
+    <br>Получил 7 из 10 от работодателя</br>
+    <hr>
+   <ul>
+     <li>Научился создавать сайт</li>
+     <li>Научился писать документацию для проекта</li>
+   </ul>
+   <hr>
+  
+  <div class="projects">
+    <h2>Проекты</h2>
+    Мои проекты по ссылке: 
+    <a href="https://github.com/Pashlunti?tab=repositories">Перейти на github</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Моя сайт-визитка. Все права защищены.</p>
+  </footer>
+
+  <div class="login-form">
+    <form action="/login" method="POST">
+      <label for="username">Имя пользователя:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit">Войти</button>
+    </form>
+  </div>
+</body>
+</html>
